@@ -46,6 +46,21 @@ nav img:hover {
 	opacity: 1;
 }
 
+#favcount {
+	position: absolute;
+	color: #fff;
+	font-size: 0.8em;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-weight: 600;
+	text-align: center;
+	background-color: orange;
+	right: 2em;
+	top: 1.7em;
+	width: 18px;
+	height: 18px;
+	border-radius: 8em;
+}
+
 main {
 	font-family: 'Merriweather Sans', sans-serif;
 	width: 100%;
