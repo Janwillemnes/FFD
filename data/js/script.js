@@ -20,41 +20,44 @@ request.onload = function () {
 	  
 	  const card = document.createElement('div');
 	  card.setAttribute('class', 'card');
-		
+	  container.appendChild(card);
+
 	  const cover = document.createElement('img');
 	  cover.src = movie.cover;
-		
-	  const genreslist = document.createElement('ul');
-	  const genres = document.createElement('li');
-	  genres.textContent = movie.genres;
-	  
+	  cover.setAttribute('class', 'cover');
+	  card.appendChild(cover);
+
 	  const title = document.createElement('h1');
 	  title.textContent = movie.title;
-		
+	  card.appendChild(title);
+
 	  const releaseDate = document.createElement('p');
       releaseDate.textContent = movie.release_date;
 	  releaseDate.setAttribute('class', 'releasedate');
+	  card.appendChild(releaseDate);
+
+	  const genreslist = document.createElement('ul');
+	  card.appendChild(genreslist);
+	  movie.genres.forEach(thema =>{
+		  var genres = document.createElement('li');
+		  genres.textContent = thema;
+		  genreslist.appendChild(genres);
+		  console.log(thema);
+  		})
 
 	  const heart = document.createElement('img');
 	  heart.setAttribute('class', 'heart');
 	  heart.src = 'images/heart-outline.svg';
-	  
+
 	  const simplePlot = document.createElement('p');
 	  simplePlot.textContent = movie.simple_plot;
-	
-	  container.appendChild(card);
-	
-	  card.appendChild(cover);
-	  card.appendChild(title);
-	  card.appendChild(releaseDate);
+	  simplePlot.setAttribute('class', 'simple_plot');
 	  card.appendChild(simplePlot);
-		
-	  card.appendChild(genreslist);
-	  genreslist.appendChild(genres);
-		
+
 	  card.appendChild(heart);
 
     });  
+    checkHeart();
   } 
 }
 
@@ -63,21 +66,11 @@ request.send();
 
 
 
-
-
-
 // FAVORITES COUNTER // 
 
-var heartList = document.querySelectorAll(".heart");
 var visualCounter = document.getElementById("favcount");
 var favTotal = 0;
-console.log(heartList);
 
-
-for(var i =0; i<heartList.length; i++){
-	heartList[i].addEventListener("click", like);
-	heartList[i].data ="unliked";
-}
 
 function like(event){
 	if (this.data=="unliked") {
@@ -91,9 +84,15 @@ function like(event){
 		this.data="unliked";
 		visualCounter.classList.toggle("bounceIn");
 		countdown();
-		console.log('hello');
 	}
-		
+}
+
+function checkHeart(){
+		heartList = document.querySelectorAll(".heart");
+		for(var i =0; i<heartList.length; i++){
+		heartList[i].addEventListener("click", like);
+		heartList[i].data ="unliked";
+	}
 }
 
 function countup(){
@@ -110,4 +109,3 @@ function favCounter(){
 	visualCounter.innerHTML = favTotal;
 	
 }
-

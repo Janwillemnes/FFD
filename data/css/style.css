@@ -4,10 +4,31 @@
 }
 
 body {
-	background-color: #333;
 	font-size: 16px;
+	width: 100%;
+	background: linear-gradient(270deg, #224143, #252545, #3e243f);
+	background-size: 400% 400%;
+
+	-webkit-animation: Gradient 10s ease infinite;
+	-moz-animation: Gradient 10s ease infinite;
+	animation: Gradient 10s ease infinite;
 }
 
+@-webkit-keyframes Gradient {
+    0%{background-position:0% 83%}
+    50%{background-position:100% 18%}
+    100%{background-position:0% 83%}
+}
+@-moz-keyframes Gradient {
+    0%{background-position:0% 83%}
+    50%{background-position:100% 18%}
+    100%{background-position:0% 83%}
+}
+@keyframes Gradient { 
+    0%{background-position:0% 83%}
+    50%{background-position:100% 18%}
+    100%{background-position:0% 83%}
+}
 nav {
 	position: fixed;
 	background-color: #222;
@@ -67,6 +88,8 @@ main {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 	margin: 0 auto;
+	padding-top: 2em;
+	overflow: auto;
 }
 
 .card {
@@ -75,42 +98,71 @@ main {
 	padding-bottom: 5em;
 }
 
+#root {
+	margin-top: 3.5em;
+}
 
 main img {
 	display: block;
 	margin-left: auto;
     margin-right: auto;
 	width:70%;
-	padding-bottom: 1em;
+	margin-bottom: 1em;
+}
+
+.cover {
+	box-shadow: 0px 0px 20px #222;
 }
 
 main h1 {
-	text-align: center;
+	text-align: left;
 	color: #fff;
 }
 
 main p {
-	text-align: center;
+	text-align: left;
 	font-weight: 200;
 	color: #fff;	
+	margin-left: 1em;
+	margin-right: 1em;
 }
+
+.releasedate {
+	font-size: 0.8em;
+	font-weight: 600;
+	margin-top: 0.5em;
+}
+
+.simple_plot {
+	font-size: 0.9em;
+	line-height: 1.7em;
+}
+
 
 main ul {
 	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 70%;
 	list-style: none;
 }
 
 main ul li {
+	display: inline-block;
 	background-color: #999;
+	font-size: 0.8em;
 	color: white;
-	width: 100px;
+	width: 70px;
 	margin: 0 auto;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
+	margin-right: 0.5em;
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
 	text-align: center;
 	border-radius: 20px;
 }
 
+.heart {
+	width: 7em;
+}
 
 /*
 
