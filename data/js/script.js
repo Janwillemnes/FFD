@@ -92,40 +92,41 @@ function requestNewMovie () {
 		  cover_small.setAttribute('class', 'cover-small');
 		  details.appendChild(cover_small);
 		  
+		  const sideInfo = document.createElement('div');
+		  sideInfo.setAttribute('class', 'side-info');
+		  details.appendChild(sideInfo);
+		  
 		  const releaseDate = document.createElement('p');
 		  releaseDate.textContent = movie.release_date;
 		  releaseDate.setAttribute('class', 'releasedate');
-		  details.appendChild(releaseDate);
-		  
+		  sideInfo.appendChild(releaseDate);
 		 
-		  const directorslist = document.createElement('ul');
-		  details.appendChild(directorslist);
-		  movie.directors.forEach(director =>{
-			  var directors = document.createElement('li');
-			  directors.textContent = director;
-			  directorslist.appendChild(directors);
-			  console.log(director);
-		 
-
 		  const genreslist = document.createElement('ul');
-		  details.appendChild(genreslist);
+		  genreslist.setAttribute('class', 'genres');
+		  sideInfo.appendChild(genreslist);
 		  movie.genres.forEach(thema =>{
 			  var genres = document.createElement('li');
 			  genres.textContent = thema;
 			  genreslist.appendChild(genres);
-			  console.log(movie.genres);
-		});
+		  });
 
 		  const simplePlot = document.createElement('p');
 		  simplePlot.textContent = movie.simple_plot;
 		  simplePlot.setAttribute('class', 'simple_plot');
 		  details.appendChild(simplePlot);
-		  
-		  const cast = document.createElement('img');
-		  cast.src = 'images/kit.jpg';
-		  cast.setAttribute('class', 'castmember');
-		  details.appendChild(cast);
 
+		  const actorslist = document.createElement('ul');
+		  actorslist.setAttribute('class', 'castmembers');
+          details.appendChild(actorslist);
+          movie.actors.forEach(actor =>{
+              console.log(actor); 
+          var actorNode = document.createElement('li');
+		  /*actorNode.setAttribute('class', 'castmember');*/
+          actorNode.innerHTML = "<div><img src='" +actor.url_photo+"'></div><p>"+actor.actor_name+"</p>";
+          actorslist.appendChild(actorNode);
+          console.log(movie.genres);
+
+          });
 
 		checkHeart();
 

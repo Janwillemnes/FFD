@@ -14,6 +14,8 @@ body {
 	animation: Gradient 10s ease infinite;
 }
 
+
+
 @-webkit-keyframes Gradient {
     0%{background-position:0% 83%}
     50%{background-position:100% 18%}
@@ -29,6 +31,9 @@ body {
     50%{background-position:100% 18%}
     100%{background-position:0% 83%}
 }
+
+
+
 nav {
 	position: fixed;
 	background-color: #222;
@@ -122,6 +127,12 @@ main {
 	width: 4em;
 }
 
+.side-info {
+	display: inline-block;
+	position: absolute;
+	width: 9em;
+	margin-top: 4.5em;
+}
 
 #button_left img {
 	width: 1em;
@@ -131,6 +142,11 @@ main {
 #button_right img {
 	width: 1em;
 	margin-top: 0.5em;
+}
+
+main button:focus {
+  outline-color: transparent;
+  outline-style: none;
 }
 
 .moredetails {
@@ -153,12 +169,6 @@ main {
 	overflow: hidden;
 }
 
-
-ol li {
-	display: inline;
-	list-style: none;
-}
-
 .cover {
 	position: absolute;
 	margin-left: auto;
@@ -175,23 +185,89 @@ ol li {
 
 #container-details {
 	width: 100%;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.1);
+	height: 100%;
+	/* background-color: rgba(255, 255, 255, 0.1); */
 	margin: 0 auto;
-	margin-top: 8em;
+	margin-top: 7em;
 }
 
-.castmember {
-	width: 4em;
-	margin-top: 1em;
-	margin-left: 1em;
-	border-radius: 100%;
+#container-details ol li {
+	display: inline;
+	list-style: none;
+	margin-top: 0.5em;
 }
+
+.castmembers {
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.castmembers li {
+	display: inline-block;
+	background-color: none;
+	padding-right: 1em;
+	margin-bottom: 3em;
+}
+
+.castmembers li div {
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+    z-index: -1;
+	border-radius: 100%;
+	margin-bottom: 0.4em;
+	opacity: 0.8;
+}
+
+.castmembers li div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+	margin-top: 0;
+
+}
+
+.castmembers li p {
+	position: absolute;
+	width: 6em;
+	text-align: center;
+	font-size: 10px;
+	font-weight: 400;
+	margin: 0 auto;
+	opacity: 0.5;
+}
+
+/*
+.portfolio_overview div div {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: rotate(45deg);
+    z-index: -1;
+    margin: 0;
+}
+
+.portfolio_overview div div img {
+    pointer-events: auto;
+    position: absolute;
+    top: -22%;
+    left: -24%;
+    bottom: -100%;
+    right: -100%;
+    transform: rotate(-45deg);
+    display: block;
+    width: 145%;
+    height: 145%;
+}
+*/
 
 .cover-small {
 	display: inline-block;
 	width: 8em;
-	margin-top: 4.5em;
+	margin-top: 3em;
 	margin-left: 1em;
 	margin-right: 0.5em;
 	box-shadow: 0px 0px 20px #222;
@@ -221,17 +297,19 @@ main p {
 .simple_plot {
 	font-size: 0.9em;
 	line-height: 1.7em;
+	margin-top: 1em;
 }
 
 
-main ul {
+.genres {
 	margin-top: 1em;
 	margin-bottom: 1em;
+	margin-left: 1em;
 	width: 70%;
 	list-style: none;
 }
 
-main ul li {
+.genres li {
 	display: inline-block;
 	background-color: #999;
 	font-size: 0.8em;
@@ -243,18 +321,6 @@ main ul li {
 	padding-bottom: 0.1em;
 	text-align: center;
 	border-radius: 20px;
-}
-
-main button:focus {
-  outline-color: transparent;
-  outline-style: none;
-}
-
-
-ul {
-	display : inline;
-	width: 2em;
-	margin-left: 1em;
 }
 
 
