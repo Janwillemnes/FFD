@@ -99,109 +99,24 @@ main {
 }
 
 #root {
-	margin-top: 1.9em;
+	margin-top: 3.5em;
 }
 
-#button_left {
-	position: absolute;
-	left: 0;
-	top: 45%;
-	color: white;
-	background-color: rgba(255, 255, 255, 0.1);
-	height: 6em;
-	width: 4em;
-}
-
-#button_right {
-	position: absolute;
-	right: 0;
-	top: 45%;
-	color: white;
-	background-color: rgba(255, 255, 255, 0.1);
-	height: 6em;
-	width: 4em;
-}
-
-
-#button_left img {
-	width: 1em;
-	margin-top: 0.5em;
-}
-
-#button_right img {
-	width: 1em;
-	margin-top: 0.5em;
-}
-
-.moredetails {
-	position: absolute;
-	width: 100%;
-	bottom: 1em;
-	margin: 0 auto;
-}
-
-.moredetails p {
-	text-align: center;
-}
-
-.moredetails img {
+main img {
 	display: block;
-	margin-top: 0.5em;
-	width: 20px;
 	margin-left: auto;
     margin-right: auto;
-	overflow: hidden;
-}
-
-
-ol li {
-	display: inline;
-	list-style: none;
+	width:70%;
+	margin-bottom: 1em;
 }
 
 .cover {
-	position: absolute;
-	margin-left: auto;
-    margin-right: auto;
-	width: 100%;
-	overflow: hidden;
-	z-index: -1;
-	opacity: 0.6;
-	top: 3.6em;
-	
-	-webkit-filter: blur(7px); /* Safari 6.0 - 9.0 */
-    filter: blur(7px);
-}
-
-#container-details {
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.1);
-	margin: 0 auto;
-	margin-top: 8em;
-}
-
-.castmember {
-	width: 4em;
-	margin-top: 1em;
-	margin-left: 1em;
-	border-radius: 100%;
-}
-
-.cover-small {
-	display: inline-block;
-	width: 8em;
-	margin-top: 4.5em;
-	margin-left: 1em;
-	margin-right: 0.5em;
 	box-shadow: 0px 0px 20px #222;
 }
 
 main h1 {
-	text-align: center;
-	font-size: 1.6em;
+	text-align: left;
 	color: #fff;
-	margin-top: 40vh;
 }
 
 main p {
@@ -213,8 +128,8 @@ main p {
 }
 
 .releasedate {
-	display: inline;
 	font-size: 0.8em;
+	font-weight: 600;
 	margin-top: 0.5em;
 }
 
@@ -245,23 +160,69 @@ main ul li {
 	border-radius: 20px;
 }
 
-main button:focus {
-  outline-color: transparent;
-  outline-style: none;
-}
-
-
-ul {
-	display : inline;
-	width: 2em;
-	margin-left: 1em;
-}
-
-
 .heart {
-	display: block;
 	width: 7em;
-	margin-top: 1em;
+}
+
+/*
+
+
+
+
+main div {
+	display: block;
+}
+
+main div p {
+	text-shadow: 0px 0px 50px #222;
+}
+
+main div img {
+	display: block;
 	margin-left: auto;
     margin-right: auto;
+	width: 60px;
+	margin-top: 1em;	
 }
+ 
+main div p:nth-child(1) {
+	color: white;	
+	text-align: center;
+	font-size: 0.9em;
+	padding-top: 40vh;
+}
+
+main div p:nth-child(2) {
+	color: white;	
+	text-align: center;
+	font-size:2em;
+	font-weight: 600;
+	letter-spacing: -1px;
+}
+
+main div p:nth-child(3) {
+	color: white;	
+	text-align: center;
+	font-size: 0.8em;
+}
+
+
+.movieitem {
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 100vh;
+}
+
+div.movieitem:nth-child(1) {
+	background-image: url(../images/hatefuleight.jpg);
+}
+
+div.movieitem:nth-child(2) {
+	background-image: url(../images/Return-of-the-Jedi.jpg);
+}
+
+div.movieitem:nth-child(3) {
+	background-image: url(../images/denofthieves.jpg);
+}
+
+*/
