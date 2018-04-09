@@ -119,12 +119,12 @@ function requestNewMovie () {
 		  actorslist.setAttribute('class', 'castmembers');
           details.appendChild(actorslist);
           movie.actors.forEach(actor =>{
-              console.log(actor); 
+           
           var actorNode = document.createElement('li');
 		  /*actorNode.setAttribute('class', 'castmember');*/
           actorNode.innerHTML = "<div><img src='" +actor.url_photo+"'></div><p>"+actor.actor_name+"</p>";
           actorslist.appendChild(actorNode);
-          console.log(movie.genres);
+          
 
           });
 
@@ -183,4 +183,14 @@ function favCounter(){
 
 
 
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 

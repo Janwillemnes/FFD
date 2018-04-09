@@ -5,7 +5,7 @@
 
 body {
 	font-size: 16px;
-	width: 100%;
+	max-width: 320px;
 	background: linear-gradient(270deg, #224143, #252545, #3e243f);
 	background-size: 400% 400%;
 
@@ -112,9 +112,11 @@ main {
 	left: 0;
 	top: 45%;
 	color: white;
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.2);
 	height: 6em;
 	width: 4em;
+	border-width: 0.1em;
+	border-color: #fff;
 }
 
 #button_right {
@@ -122,9 +124,11 @@ main {
 	right: 0;
 	top: 45%;
 	color: white;
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.2);
 	height: 6em;
 	width: 4em;
+	border-width: 0.1em;
+	border-color: #fff;
 }
 
 .side-info {
@@ -136,12 +140,12 @@ main {
 
 #button_left img {
 	width: 1em;
-	margin-top: 0.5em;
+	margin-top: 0.3em;
 }
 
 #button_right img {
 	width: 1em;
-	margin-top: 0.5em;
+	margin-top: 0.3em;
 }
 
 main button:focus {
@@ -154,6 +158,7 @@ main button:focus {
 	width: 100%;
 	bottom: 1em;
 	margin: 0 auto;
+	text-decoration:  none;
 }
 
 .moredetails p {
@@ -176,11 +181,11 @@ main button:focus {
 	width: 100%;
 	overflow: hidden;
 	z-index: -1;
-	opacity: 0.6;
+	opacity: 0.3;
 	top: 3.6em;
 	
-	-webkit-filter: blur(7px); /* Safari 6.0 - 9.0 */
-    filter: blur(7px);
+	/* -webkit-filter: blur(7px); /* Safari 6.0 - 9.0 
+    filter: blur(7px); */
 }
 
 #container-details {
@@ -275,9 +280,11 @@ main button:focus {
 
 main h1 {
 	text-align: center;
+	width: 150px;
+	margin: 0 auto;
 	font-size: 1.6em;
 	color: #fff;
-	margin-top: 40vh;
+	margin-top: 38vh;
 }
 
 main p {
