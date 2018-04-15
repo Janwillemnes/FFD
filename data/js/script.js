@@ -2,13 +2,7 @@
 
 const app = document.getElementById('root');
 
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
-
-const list = document.createElement('ol');
-list.setAttribute('class', 'content');
-
-var movieID = 1;
+var movieID = 2;
 
 function checkMovieID (){
 	if (movieID == 6) {
@@ -18,15 +12,21 @@ function checkMovieID (){
 	};
 };
 
+const card = document.createElement('div');
+	  card.setAttribute('class', 'card');
+	  app.appendChild(card);
+
 const buttonRight = document.getElementById('button_right');
-buttonRight.addEventListener("click", next);
+	  buttonRight.addEventListener("click", next);
 
 const buttonLeft = document.getElementById('button_left');
-buttonLeft.addEventListener("click", previous);
+	  buttonLeft.addEventListener("click", previous);
+
 
 function removeMovie () {
-	list.innerHTML = "";
+		card.innerHTML = "";
 };
+
 
 function previous () { 
 	if (movieID < 2) {
@@ -52,8 +52,6 @@ function next () {
 	}
 };
 
-app.appendChild(container);
-container.appendChild(list);
 
 function requestNewMovie () {
 	var request = new XMLHttpRequest();
@@ -65,23 +63,24 @@ function requestNewMovie () {
 
 	  if (request.status >= 200 && request.status < 400) {
 
-		  const card = document.createElement('li');
-		  card.setAttribute('class', 'card');
-		  list.appendChild(card);
 
 		  const cover = document.createElement('img');
 		  cover.src = movie.cover;
 		  cover.setAttribute('class', 'cover');
 		  card.appendChild(cover);
+		  
+		  const wrapper = document.createElement('div');
+		  wrapper.setAttribute('class', 'like-wrapper');
+		  card.appendChild(wrapper);
 
 		  const title = document.createElement('h1');
 		  title.textContent = movie.title;
-		  card.appendChild(title);
+		  wrapper.appendChild(title);
 		  
 		  const heart = document.createElement('img');
 		  heart.setAttribute('class', 'heart');
 		  heart.src = 'images/heart-outline.svg';
-		  card.appendChild(heart);
+		  wrapper.appendChild(heart);
 		  
 		  const details = document.createElement('div');
 		  details.setAttribute('id', 'container-details');
@@ -95,6 +94,10 @@ function requestNewMovie () {
 		  const sideInfo = document.createElement('div');
 		  sideInfo.setAttribute('class', 'side-info');
 		  details.appendChild(sideInfo);
+		  
+		  const secondTitle = document.createElement('h2');
+		  secondTitle.textContent = movie.title;
+		  sideInfo.appendChild(secondTitle);
 		  
 		  const releaseDate = document.createElement('p');
 		  releaseDate.textContent = movie.release_date;
@@ -121,8 +124,11 @@ function requestNewMovie () {
           movie.actors.forEach(actor =>{
            
           var actorNode = document.createElement('li');
-		  /*actorNode.setAttribute('class', 'castmember');*/
-          actorNode.innerHTML = "<div><img src='" +actor.url_photo+"'></div><p>"+actor.actor_name+"</p>";
+
+		  /* Links broken in JSON file.... using actors without url
+		  actorNode.innerHTML = "<div><img src='" +actor.url_photo+"'></div><a href='" +actor.url_character+"'><p>"+actor.actor_name+"</p></a>"; */
+		  actorNode.innerHTML = "<div><img src='" +actor.url_photo+"'></div><p>"+actor.actor_name+"</p>";
+			  
           actorslist.appendChild(actorNode);
           
 
@@ -137,6 +143,9 @@ function requestNewMovie () {
 }
 
 requestNewMovie();
+
+
+
 
 
 // FAVORITES COUNTER // 
@@ -180,8 +189,6 @@ function countdown(){
 function favCounter(){
 	visualCounter.innerHTML = favTotal;
 }
-
-
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
